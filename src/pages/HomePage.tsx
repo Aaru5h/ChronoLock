@@ -46,22 +46,14 @@ const HomePage: React.FC = () => {
           href="https://bolt.new/"
           target="_blank"
           rel="noopener noreferrer"
-          className="group block transition-transform duration-300 hover:scale-110 hover:drop-shadow-lg"
+          className="block transition-transform duration-300 hover:scale-110 hover:drop-shadow-lg"
           title="Built with Bolt.new"
         >
-          <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all duration-300">
-            <div className="text-center">
-              <div className="text-white font-bold text-xs leading-tight">
-                BUILT
-              </div>
-              <div className="text-white font-bold text-xs leading-tight">
-                WITH
-              </div>
-              <div className="text-white font-bold text-xs leading-tight">
-                BOLT
-              </div>
-            </div>
-          </div>
+          <img
+            src="/bolt-badge.svg"
+            alt="Powered by Bolt.new"
+            className="w-16 h-16 opacity-90 hover:opacity-100 transition-opacity duration-300 drop-shadow-md"
+          />
         </a>
       </div>
 

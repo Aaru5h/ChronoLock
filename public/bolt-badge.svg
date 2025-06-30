@@ -1,0 +1,46 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .badge-text { 
+        font-family: Arial, sans-serif; 
+        font-weight: bold; 
+        font-size: 14px; 
+        fill: black;
+        text-anchor: middle;
+      }
+      .bolt-b {
+        font-family: Arial, sans-serif;
+        font-weight: 900;
+        font-size: 72px;
+        fill: black;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+  
+  <!-- White circle background -->
+  <circle cx="100" cy="100" r="95" fill="white" stroke="black" stroke-width="2"/>
+  
+  <!-- Curved text path for "POWERED BY BOLT.NEW MADE IN" -->
+  <defs>
+    <path id="top-curve" d="M 30 100 A 70 70 0 0 1 170 100" />
+    <path id="bottom-curve" d="M 170 100 A 70 70 0 0 1 30 100" />
+  </defs>
+  
+  <!-- Top curved text -->
+  <text class="badge-text">
+    <textPath href="#top-curve" startOffset="50%">
+      POWERED BY BOLT.NEW MADE IN
+    </textPath>
+  </text>
+  
+  <!-- Bottom curved text -->
+  <text class="badge-text">
+    <textPath href="#bottom-curve" startOffset="50%">
+      BOLT.NEW MADE IN BOLT.NEW
+    </textPath>
+  </text>
+  
+  <!-- Central "b" logo -->
+  <text x="100" y="125" class="bolt-b">b</text>
+</svg>
