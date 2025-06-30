@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, Heart, Shield, Sparkles, Star, Moon, Zap, Archive, Mic, ExternalLink } from 'lucide-react';
+import { Clock, Heart, Shield, Sparkles, Star, Moon, Zap, Archive, Mic } from 'lucide-react';
 import { useWallet } from '../contexts/WalletContext';
 
 const HomePage: React.FC = () => {
@@ -46,21 +46,14 @@ const HomePage: React.FC = () => {
           href="https://bolt.new/"
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center space-x-3 glass-soft px-4 py-3 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-ethereal border border-white/[0.12]"
+          className="block transition-transform duration-300 hover:scale-110 hover:drop-shadow-lg"
           title="Built with Bolt.new"
         >
-          <div className="w-8 h-8 bg-gradient-to-br from-cosmos-500 to-nebula-500 rounded-lg flex items-center justify-center">
-            <Zap className="h-5 w-5 text-white" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-serif font-medium text-starlight-200 group-hover:text-starlight-100 transition-colors">
-              Built with
-            </span>
-            <span className="text-xs text-starlight-400 group-hover:text-starlight-300 transition-colors">
-              Bolt.new
-            </span>
-          </div>
-          <ExternalLink className="h-3 w-3 text-starlight-400 group-hover:text-starlight-200 transition-colors" />
+          <img
+            src="/assets/boltWhite.png"
+            alt="Built with Bolt.new"
+            className="w-16 h-16 opacity-90 hover:opacity-100 transition-opacity duration-300 drop-shadow-md"
+          />
         </a>
       </div>
 
