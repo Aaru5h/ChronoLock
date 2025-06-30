@@ -12,12 +12,16 @@
 
 [context.production.environment]
   VITE_DEV_MODE = "false"
+  # Add your Pinata JWT token here for IPFS to work
+  # VITE_PINATA_JWT = "your_pinata_jwt_token_here"
 
 [context.deploy-preview.environment]
   VITE_DEV_MODE = "false"
+  # VITE_PINATA_JWT = "your_pinata_jwt_token_here"
 
 [context.branch-deploy.environment]
   VITE_DEV_MODE = "false"
+  # VITE_PINATA_JWT = "your_pinata_jwt_token_here"
 
 [[headers]]
   for = "/*"

@@ -53,6 +53,15 @@ const HomePage: React.FC = () => {
             src="/assets/boltWhite.png"
             alt="Built with Bolt.new"
             className="w-16 h-16 opacity-90 hover:opacity-100 transition-opacity duration-300 drop-shadow-md"
+            onError={(e) => {
+              // Fallback if image doesn't load
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+              const fallback = document.createElement('div');
+              fallback.className = 'w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white text-xs font-bold border border-white/20';
+              fallback.innerHTML = 'BOLT';
+              target.parentNode?.appendChild(fallback);
+            }}
           />
         </a>
       </div>
