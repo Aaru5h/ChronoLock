@@ -47,7 +47,7 @@ const HomePage: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="block transition-transform duration-300 hover:scale-110 hover:drop-shadow-lg"
-          title="Built with Bolt.new"
+          title="Powered by Bolt.new"
         >
           <img
             src="/bolt-badge.svg"
