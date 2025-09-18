@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
-import { Mic, Square, Play, Trash2, Calendar, Lock, Upload, Star, Moon, AlertCircle, CheckCircle, ExternalLink, Wallet, Zap } from 'lucide-react';
+import { Mic, Square, Trash2, Calendar, Lock, Upload, Star, Moon, AlertCircle, CheckCircle, ExternalLink, Wallet, Zap } from 'lucide-react';
 import { useWallet } from '../contexts/WalletContext';
 import { useAudio } from '../contexts/AudioContext';
 import WaveformVisualizer from '../components/WaveformVisualizer';
@@ -25,14 +25,10 @@ const RecordPage: React.FC = () => {
 
   const voiceMemoryService = new VoiceMemoryService();
 
-  if (!isConnected) {
-    return <Navigate to="/" replace />;
-  }
-
   // Check balance on component mount and when accounts change
   useEffect(() => {
     const checkBalance = async () => {
-      if (accounts.length > 0) {
+      if (isConnected && accounts.length > 0) {
         setIsCheckingBalance(true);
         try {
           const balance = await voiceMemoryService.checkAccountBalance(accounts[0]);
@@ -49,7 +45,11 @@ const RecordPage: React.FC = () => {
     };
 
     checkBalance();
-  }, [accounts]);
+  }, [isConnected, accounts]);
+
+  if (!isConnected) {
+    return <Navigate to="/" replace />;
+  }
 
   const handleUpload = async (useDemoMode: boolean = false) => {
     if (!audioBlob || !title.trim() || (!peraWallet && !useDemoMode)) {

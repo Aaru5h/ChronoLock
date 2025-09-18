@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navigate, Link } from 'react-router-dom';
-import { Clock, Lock, Unlock, Play, Calendar, Heart, Star, Moon, RefreshCw, Zap } from 'lucide-react';
-import { formatDistanceToNow, isAfter } from 'date-fns';
+import { Clock, Lock, Play, Calendar, Heart, Star, Moon, RefreshCw, Zap } from 'lucide-react';
+import { formatDistanceToNow } from 'date-fns';
 import { useWallet } from '../contexts/WalletContext';
 import { VoiceMemoryService, VoiceMemory } from '../services/voiceMemoryService';
 
@@ -14,13 +14,15 @@ const DashboardPage: React.FC = () => {
 
   const voiceMemoryService = new VoiceMemoryService();
 
+  useEffect(() => {
+    if (isConnected && accounts.length > 0) {
+      loadMemories();
+    }
+  }, [isConnected, accounts]);
+
   if (!isConnected) {
     return <Navigate to="/" replace />;
   }
-
-  useEffect(() => {
-    loadMemories();
-  }, [accounts]);
 
   const loadMemories = async () => {
     if (!accounts[0]) return;

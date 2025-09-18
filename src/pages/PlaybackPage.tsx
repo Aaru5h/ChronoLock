@@ -34,13 +34,15 @@ const PlaybackPage: React.FC = () => {
 
   const voiceMemoryService = new VoiceMemoryService();
 
+  useEffect(() => {
+    if (isConnected && id && accounts.length > 0) {
+      loadMemory();
+    }
+  }, [isConnected, id, accounts]);
+
   if (!isConnected) {
     return <Navigate to="/" replace />;
   }
-
-  useEffect(() => {
-    loadMemory();
-  }, [id, accounts]);
 
   const loadMemory = async () => {
     if (!id || !accounts[0]) return;

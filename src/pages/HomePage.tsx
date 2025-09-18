@@ -40,22 +40,6 @@ const HomePage: React.FC = () => {
       <div className="absolute top-64 right-24 w-32 h-32 bg-nebula-500/[0.06] rounded-full blur-2xl animate-float" style={{ animationDelay: '3s' }} />
       <div className="absolute bottom-48 left-1/3 w-24 h-24 bg-aurora-500/[0.05] rounded-full blur-xl animate-float" style={{ animationDelay: '6s' }} />
 
-      {/* Built with Bolt.new Badge */}
-      <div className="fixed bottom-6 left-6 z-50">
-        <a
-          href="https://bolt.new/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block transition-transform duration-300 hover:scale-110 hover:drop-shadow-lg"
-          title="Powered by Bolt.new"
-        >
-          <img
-            src="/bolt-badge.svg"
-            alt="Powered by Bolt.new"
-            className="w-16 h-16 opacity-90 hover:opacity-100 transition-opacity duration-300 drop-shadow-md"
-          />
-        </a>
-      </div>
 
       {/* Hero Section */}
       <div className="text-center max-w-6xl mx-auto mb-32 relative">
